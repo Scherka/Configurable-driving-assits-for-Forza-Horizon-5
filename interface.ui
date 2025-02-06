@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Configurable assistant for Forza Horizon 5</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>media/FH-assistant.ico</normaloff>media/FH-assistant.ico</iconset>
+  </property>
   <property name="locale">
    <locale language="Russian" country="Russia"/>
   </property>
