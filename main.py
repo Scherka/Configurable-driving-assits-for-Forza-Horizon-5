@@ -3,9 +3,9 @@ import pygame
 import virtual_controller
 from PyQt5 import QtCore, QtWidgets
 from interface import Ui_MainWindow
-from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow, QVBoxLayout, QHBoxLayout, QWidget, QLineEdit, QPushButton, QCheckBox, QMessageBox
-from PyQt5.QtCore import Qt, QTimer
-from multiprocessing import Process, Queue
+from PyQt5.QtWidgets import QApplication, QMessageBox
+from PyQt5.QtCore import QTimer
+from multiprocessing import Process, Queue, freeze_support
 from telemetry import udp_listener  # Import the UDP listener function
 from acceleration import calculate_acceleration_time  # Import the acceleration function
 
@@ -284,6 +284,7 @@ class MainWindow(QtWidgets.QMainWindow):
         warning.exec_()
 
 if __name__ == "__main__":
+    freeze_support()
     pygame.init()
     try:
         from resources import config, write_config
