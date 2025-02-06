@@ -1,7 +1,6 @@
 import socket
 import struct
-from multiprocessing import Queue
-
+from resources import config
 
 def udp_listener(telemetry_queue, acceleration_queue, PORT):
     # Create a UDP socket
@@ -9,7 +8,7 @@ def udp_listener(telemetry_queue, acceleration_queue, PORT):
     print("UDP socket created")
     try:
         # Configuration
-        HOST = "127.0.0.1"  # Listen on localhost
+        HOST = config['host']  # Listen on localhost
         udp_socket.bind((HOST, PORT))
         print(f"Listening for UDP packets on {HOST}:{PORT}...")
         while True:

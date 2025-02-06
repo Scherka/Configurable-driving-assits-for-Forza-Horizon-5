@@ -5,7 +5,8 @@ drivetrains = {
      "AWD": 2
 }
 
-default_config = {"port": "",
+default_config = {"host": "127.0.0.1",
+                  "port": "",
                   "tcr_drop_rate": "0.005",
                   "tcr_minimum_coefficient": "0.5",
                   "tcr_threshold": "70"}
