@@ -21,7 +21,7 @@ def adjust_to_slip(telemetry_data, coeff_rt):
     if all(tire > threshold for tire in tires_for_check):
         return max(minimum_coefficient, coeff_rt * (1-drop_rate))
     else:
-        return min(1, coeff_rt / (1-drop_rate))
+        return min(1, coeff_rt / (1-drop_rate/2))
 
 #
 def adjust_input(telemetry_data,previous_telemetry_data, coeff_rt):
