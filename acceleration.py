@@ -21,6 +21,7 @@ class accelerationTimeCalculator():
     # Start measuring acceleration time
     def start(self):
         print("Started")
+        self.output_queue.put((0, "clear"))
         self.start_time = time.time()
         self.is_measuring = True
 
@@ -59,7 +60,7 @@ class accelerationTimeCalculator():
                 elif self.speed < 0.01:
                     self.stop() # Stop measuring time if player stops
                     print("Stopped")
-            elif self.previous_speed < 0.01 and self.speed > 0.01:
+            elif self.previous_speed < 1 and self.speed > 1:
                 self.start() # Start measuring time when player starts moving
             self.previous_speed = self.speed
             time.sleep(0.01)

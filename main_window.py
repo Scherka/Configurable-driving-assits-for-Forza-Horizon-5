@@ -198,7 +198,10 @@ class MainWindow(QtWidgets.QMainWindow):
                 achieved_speed = acceleration_time_data[1]
                 if achieved_speed in self.speed_mapping:
                     self.speed_mapping[achieved_speed].setText(f'{time:.3f}')
-                    self.speed_mapping[achieved_speed].setStyleSheet("color: black; font-weight: bold")
+                # reset the times to 0 if car starts to move
+                elif achieved_speed == "clear":
+                    for speed in self.speed_mapping:
+                        self.speed_mapping[speed].setText('0')
             # Check the signals to turn on/off TCR
             while not self.toggle_tcr_queue.empty():
                 signal = self.toggle_tcr_queue.get()
