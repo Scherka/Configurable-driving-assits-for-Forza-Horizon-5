@@ -36,7 +36,7 @@ def map_inputs_to_virtual(toggle_tcr_queue, gamepad, inputs, coeff_rt):
                 gamepad.press_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_DPAD_UP)
             elif event.value[1] == -1:
                 gamepad.press_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_DPAD_DOWN)
-                toggle_tcr_queue.put(True)
+                # toggle_tcr_queue.put(True)
             if event.value[0] == 0:
                 gamepad.release_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_DPAD_RIGHT)
                 gamepad.release_button(vg.XUSB_BUTTON.XUSB_GAMEPAD_DPAD_LEFT)
